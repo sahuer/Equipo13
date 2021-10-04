@@ -1,12 +1,14 @@
 const express = require('express')
-const app = express()
+const path = require('path')
 
-app.get("/prueba", (req,res) =>{
-    res.send("Prueba servidor funcionando")
-})
+// Cargar el objeto de la DB
+const sequelize = require('./utils/database')
 
 // Importar rutas
 const vjRoutes = require('./routes/videojuegos')
+
+// Crear aplicaion web
+const app = express()
 
 // Establecer middleware que configure donde  
 // se encuentran recursos publicos
@@ -17,6 +19,9 @@ app.use(express.urlencoded({extended:true})) // json info
 // Vinculamos la aplicación con los recursos de videojuegos
 app.use('/videojuegos',vjRoutes);
 
+app.get("/prueba", (req,res) =>{
+    res.send("Prueba servidor funcionando")
+})
 
 // sequelize.sync({force:true})
 sequelize.sync()
