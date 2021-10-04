@@ -146,7 +146,7 @@ exports.postAgregarConsolaVideojuego = (req,res)=>{
         })
 }
 
-/*
+
 exports.getObtenerConsolaVideojuegos = (req,res)=>{
     ConsolaVideojuego.findAll()
         .then(resultado =>{
@@ -157,7 +157,7 @@ exports.getObtenerConsolaVideojuegos = (req,res)=>{
             console.log(err)
         })
 }
-
+/*
 exports.postBorrarConsolaVideojuego = (req,res)=>{
     console.log(req.body)
     ConsolaVideojuego.destroy({
