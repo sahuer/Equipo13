@@ -17,8 +17,8 @@ router.post('/actualizarConsola',vjController.postActualizarConsola)
 
 // Servicio para el procesamiento de datos de Consolas-Videojuegos
 router.post('/agregarConsolaVideojuego',vjController.postAgregarConsolaVideojuego)
-router.get('/obtenerConsolaVideojuegos',vjController.getObtenerConsolaVideojuegos)/*
+router.get('/obtenerConsolaVideojuegos',vjController.getObtenerConsolaVideojuegos)
 router.post('/borrarConsolaVideojuego',vjController.postBorrarConsolaVideojuego)
-router.post('/actualizarConsolaVideojuego',vjController.postActualizarConsolaVideojuego)*/
+router.post('/actualizarConsolaVideojuego',vjController.postActualizarConsolaVideojuego)
 
 module.exports = router

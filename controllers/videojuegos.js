@@ -135,7 +135,12 @@ exports.postActualizarConsola = (req,res)=>{
 
 exports.postAgregarConsolaVideojuego = (req,res)=>{
     console.log(req.body);      // <= {id: number, nombre: text}
-    ConsolaVideojuego.create(req.body)
+    ConsolaVideojuego.create({
+        idCV: req.body.idCV,
+        lanzamiento: req.body.lanzamiento,
+        videojuegoId: req.body.videojuegoId,
+        consolaId: req.body.consolaId
+    })
         .then(resultado=>{
             console.log('Registro Exitoso\n')
             res.json({estado: "aceptado"})
@@ -157,12 +162,12 @@ exports.getObtenerConsolaVideojuegos = (req,res)=>{
             console.log(err)
         })
 }
-/*
+
 exports.postBorrarConsolaVideojuego = (req,res)=>{
     console.log(req.body)
     ConsolaVideojuego.destroy({
         where: {
-            id: req.body.id
+            idCV: req.body.idCV
         }
     })
     .then(resultado =>{
@@ -178,10 +183,12 @@ exports.postBorrarConsolaVideojuego = (req,res)=>{
 exports.postActualizarConsolaVideojuego = (req,res)=>{
     console.log(req.body)
     ConsolaVideojuego.update({
-        nombre: req.body.nombre
+        lanzamiento: req.body.lanzamiento,
+        videojuegoId: req.body.videojuegoId,
+        consolaId: req.body.consolaId
     },{
         where: {
-            id: req.body.id
+            idCV: req.body.idCV
         }
     })
     .then(resultado =>{
@@ -192,4 +199,4 @@ exports.postActualizarConsolaVideojuego = (req,res)=>{
         console.log(err)
         res.json({estado: "error"})
     })
-}*/
+}
